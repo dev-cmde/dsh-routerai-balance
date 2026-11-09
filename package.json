@@ -1,0 +1,53 @@
+{
+  "name": "dsh-routerai-balance",
+  "version": "0.2.2",
+  "description": "RouterAI credit balance and period spend in the harness sidebar.",
+  "author": "Comrad_e - https://dev.cmde.ru",
+  "homepage": "https://dev.cmde.ru",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-cmde/dsh-routerai-balance.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "routerai",
+    "balance",
+    "credits",
+    "sidebar"
+  ],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "icon.svg",
+    "locale",
+    "cordis.patch.yml",
+    "lib",
+    "screenshots.json",
+    "assets"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "engines": {
+    "dsh": ">=0.2.0"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
